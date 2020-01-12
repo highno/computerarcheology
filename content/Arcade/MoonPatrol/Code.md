@@ -111,9 +111,11 @@ NMI:
 ;
 0066: FB             EI                       ; Re-enable interrupts (didn't quite line up with 65)
 0067: C9             RET                      ; Ignore
+```
 
 # START (Continued)
 
+```code
 StartupCont:
 ;
 ;Startup continues here
