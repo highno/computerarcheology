@@ -4,7 +4,7 @@
 
 >>> memory
 
-| | | |
+| address | symbol | description |
 | --- | --- | --- |
 | E001      | SndQueue1            | Sound effects queue buffer |
 | E002      | SndQueue2            | Sound effects queue buffer |
@@ -70,6 +70,9 @@
 
 
 >>> memory
+
+| address | symbol | description |
+| --- | --- | --- |
 | E172      | mE172                | |
 | E1A2      | mE1A2                | |
 | E1A6      | mE1A6                | |
@@ -115,6 +118,8 @@ E1C0-E1CE also used by ISR ??
 
 
 >>> memory
+| address | symbol | description |
+| --- | --- | --- |
 | E1CF      | comListHead          | the LSB of the first entry in the wrap-around command list at E600..E6FF |
 | E1D0      | comListTail          | the LSB of the next-available slot in the  command list. |
 | E1D3      | mE1D3                |  |
@@ -136,7 +141,7 @@ E1C0-E1CE also used by ISR ??
 
 >>> memory
 
-| | | |
+| address | symbol | description |
 | --- | --- | --- |
 | E300      | buggyHandler         | the current handler routine for the moon buggy |
 | E301      | buggyObject          | LSB of sprite object for buggy |
@@ -178,8 +183,9 @@ E518 - E52F is other player (24 Bytes)
 
 >>> memory
 
-| | | |
-| --- | Struct for the current player | --- |
+| address | symbol | description |
+| --- | --- | --- |
+| | Struct for the current player | |
 | E518      | mE518                | |
 | E52F      | mE52F                | is other player (swapped at 60A) |
 | E500      | curScore             |   Score for current player 3-byte (6-digit) |
@@ -206,7 +212,7 @@ E518 - E52F is other player (24 Bytes)
 | E515      | mE515                | |
 | E516      | mE516                | |
 | E517      | mE517                | |
-| --- | Struct for the "other" player | --- |
+| | Struct for the "other" player | |
 | E518      | othScore             |  Score for "other" player 3-byte (6-digit) |
 | E519      | othScore1            |  Score for "other" player 3-byte (6-digit) |
 | E51A      | othScore2            |  Score for "other" player 3-byte (6-digit) |
@@ -234,7 +240,7 @@ E518 - E52F is other player (24 Bytes)
 
 >>> memory
 
-| | | |
+| address | symbol | description |
 | --- | --- | --- |
 | E700      | mE700                |  |
 | E701      | menuRow              | The current main menu row number (3-8) |
