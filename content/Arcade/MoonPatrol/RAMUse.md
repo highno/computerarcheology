@@ -67,9 +67,9 @@
 | E0F6      | mE0F6                |  |
 | E0F7      | mE0F7                |  |
 | E0F9      | champColors          | If zero then use "beginner" colors. Else use "champ" colors. |
-}}}
 
-{{{memory
+
+>>> memory
 | E172      | mE172                | |
 | E1A2      | mE1A2                | |
 | E1A6      | mE1A6                | |
@@ -101,9 +101,8 @@
 | E32D      | mE32D                | |
 | E32F      | mE32F                | |
 | E372      | mE372                | |
-}}}
 
-{{{
+
 E100-E1BF Sprites (48) info copied to hardware by ISR
 
 E100->C840 (0x40 bytes) ?? Enemy rocks and ships
@@ -113,9 +112,9 @@ E160->C8C0 (0x40 bytes)
 E1A0->C8A0 (0x20 bytes) ?? Buggy, wheels, forward shot
 
 E1C0-E1CE also used by ISR ??
-}}}
 
-{{{memory
+
+>>> memory
 | E1CF      | comListHead          | the LSB of the first entry in the wrap-around command list at E600..E6FF |
 | E1D0      | comListTail          | the LSB of the next-available slot in the  command list. |
 | E1D3      | mE1D3                |  |
@@ -174,12 +173,13 @@ E1C0-E1CE also used by ISR ??
 | E4E0      | ??object1E??         | |
 | E4F0      | ??object1F??         | |
 
-E500 - E517 is current player
+E500 - E517 is current player (24 Bytes)
+E518 - E52F is other player (24 Bytes)
 
 >>> memory
 
 | | | |
-| --- | --- | --- |
+| --- | Struct for the current player | --- |
 | E518      | mE518                | |
 | E52F      | mE52F                | is other player (swapped at 60A) |
 | E500      | curScore             |   Score for current player 3-byte (6-digit) |
@@ -206,6 +206,7 @@ E500 - E517 is current player
 | E515      | mE515                | |
 | E516      | mE516                | |
 | E517      | mE517                | |
+| --- | Struct for the "other" player | --- |
 | E518      | othScore             |  Score for "other" player 3-byte (6-digit) |
 | E519      | othScore1            |  Score for "other" player 3-byte (6-digit) |
 | E51A      | othScore2            |  Score for "other" player 3-byte (6-digit) |
