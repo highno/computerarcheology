@@ -32,7 +32,8 @@
 | E04B      | mE04B                | Last inputs (active high) |
 | E04C      | flipValue            | Current flip bits value |
 | E04D      | mE04D                | Incremented when buggy-held-in-air is done |
-| E04E      | isrCNT_1             | Bumped up with every IRQ |
+| E04E      | isrCNT_1             | Bumped up with every IRQ used at: |
+|  |  | Blinking PUSH BUTTON in game waiting for play button |
 | E04F      | isrCNT_16            | Bumped up every 16 IRQs |
 | E050      | isrCount3            | Bumped down every IRQ |
 | E051      | isrCount4            | Bumped down every IRQ |
