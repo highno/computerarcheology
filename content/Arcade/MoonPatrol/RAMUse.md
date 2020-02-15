@@ -65,7 +65,7 @@
 | E0F4      | mE0F4                |  |
 | E0F6      | mE0F6                |  |
 | E0F7      | mE0F7                |  |
-| E0F9      | champColors          | If zero then use "beginner" colors. Else use "champ" colors. |
+| E0F9      | champColors          | If bit 0 is zero then use "beginner" colors. Else use "champ" colors. |
 
 | address | label | description |
 | --- | --- | --- |
