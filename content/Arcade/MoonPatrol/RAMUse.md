@@ -40,7 +40,7 @@
 | E051      | isrCount4            | Bumped down every IRQ |
 | E052      | mE052                |  |
 | E053      | coinStart            | Holds the current value (active high) of D000. Filled in the ISR. |
-| E054      | mE054                |  |
+| E054      | mE054                | Seconds left for continue game - leaves continue mode if is 00 and should be further decreased |
 | E05F      | mE05F                |  |
 | E068      | mE068                |  |
 | E094      | mE094                |  |
