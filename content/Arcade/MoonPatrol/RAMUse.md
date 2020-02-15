@@ -2,9 +2,7 @@
 
 # RAM Use
 
->>> memory
-
-| | | |
+| address | label | description |
 | --- | --- | --- |
 | E001      | SndQueue1            | Sound effects queue buffer |
 | E002      | SndQueue2            | Sound effects queue buffer |
@@ -67,9 +65,9 @@
 | E0F6      | mE0F6                |  |
 | E0F7      | mE0F7                |  |
 | E0F9      | champColors          | If zero then use "beginner" colors. Else use "champ" colors. |
-}}}
 
-{{{memory
+| address | label | description |
+| --- | --- | --- |
 | E172      | mE172                | |
 | E1A2      | mE1A2                | |
 | E1A6      | mE1A6                | |
@@ -101,9 +99,7 @@
 | E32D      | mE32D                | |
 | E32F      | mE32F                | |
 | E372      | mE372                | |
-}}}
 
-{{{
 E100-E1BF Sprites (48) info copied to hardware by ISR
 
 E100->C840 (0x40 bytes) ?? Enemy rocks and ships
@@ -113,9 +109,9 @@ E160->C8C0 (0x40 bytes)
 E1A0->C8A0 (0x20 bytes) ?? Buggy, wheels, forward shot
 
 E1C0-E1CE also used by ISR ??
-}}}
 
-{{{memory
+| address | label | description |
+| --- | --- | --- |
 | E1CF      | comListHead          | the LSB of the first entry in the wrap-around command list at E600..E6FF |
 | E1D0      | comListTail          | the LSB of the next-available slot in the  command list. |
 | E1D3      | mE1D3                |  |
@@ -135,9 +131,7 @@ E1C0-E1CE also used by ISR ??
 | E1E2      | mE1E2                |  |
 
 
->>> memory
-
-| | | |
+| address | label | description |
 | --- | --- | --- |
 | E300      | buggyHandler         | the current handler routine for the moon buggy |
 | E301      | buggyObject          | LSB of sprite object for buggy |
@@ -176,9 +170,7 @@ E1C0-E1CE also used by ISR ??
 
 E500 - E517 is current player
 
->>> memory
-
-| | | |
+| address | label | description |
 | --- | --- | --- |
 | E518      | mE518                | |
 | E52F      | mE52F                | is other player (swapped at 60A) |
@@ -231,9 +223,7 @@ E500 - E517 is current player
 | E52E      | mE52E                | |
 | E52F      | mE52F                | |
 
->>> memory
-
-| | | |
+| address | label | description |
 | --- | --- | --- |
 | E700      | mE700                |  |
 | E701      | menuRow              | The current main menu row number (3-8) |
@@ -283,6 +273,7 @@ These are read once at power-up
   7 1=??Demo mode??   1=don't register score @062C, @00D9, @047A, @062C @0D76
 ```
 
+
 There are 32 objects that are processed with each ISR interrupt. All 32 are processed
 every ISR. Each object is a 16 byte structure. The first byte selects the code to run
 for the object when the ISR fires. This value is an offset in a jump table with 1 being 
@@ -291,6 +282,7 @@ the first entry. A value of 0 means do nothing (the object is inactive or availa
 Unlike the "text" objects processed in the main-loop, these objects are fixed. Object 0
 is always the moon-buggy. Object 2 is always the player's forward shot. Objects 3..6
 are always the four player-air-shots.
+
 
 ```
 E300 ISRobjects   Start of ISR game object structures
@@ -313,7 +305,7 @@ E300 ISRobjects   Start of ISR game object structures
    0F
 ```
 
-```
+
 E600..E6FF contains a list of ??text??game commands to execute.
 E1CF contains the LSB of the first command.
 E1D0 contains the LSB of the next-available command.
@@ -328,6 +320,7 @@ commands eventually become inactive thus they eventually all get removed
 from the front of the list.
 
 The format of these commands:
+```
   00 Command number (00=none)
   01 ?? ISR value for next execution (@0325) --
   02 Text script LSB
